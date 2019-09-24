@@ -1,6 +1,6 @@
-package com.violet.vcommerce.vcproducts.enums.converter;
+package com.violet.vcommerce.vcproducts.constant.enums.converter;
 
-import com.violet.vcommerce.vcproducts.enums.Currency;
+import com.violet.vcommerce.vcproducts.constant.enums.Currency;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

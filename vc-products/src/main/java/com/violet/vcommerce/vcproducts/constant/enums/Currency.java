@@ -1,4 +1,4 @@
-package com.violet.vcommerce.vcproducts.enums;
+package com.violet.vcommerce.vcproducts.constant.enums;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
