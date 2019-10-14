@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: vc-products
-
-server:
-  port: 8001

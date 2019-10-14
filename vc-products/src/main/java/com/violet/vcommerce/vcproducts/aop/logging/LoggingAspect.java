@@ -1,14 +1,13 @@
 package com.violet.vcommerce.vcproducts.aop.logging;
 
 import com.violet.vcommerce.vcproducts.constant.VCProductsConstant;
+import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 
@@ -19,10 +18,9 @@ import java.util.Arrays;
  * <p>
  * By default, it only runs with the "dev" profile.
  */
+@Log4j2
 @Aspect
 public class LoggingAspect {
-
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private final Environment env;
 
@@ -37,7 +35,6 @@ public class LoggingAspect {
             " || within(@org.springframework.stereotype.Service *)" +
             " || within(@org.springframework.web.bind.annotation.RestController *)")
     public void springBeanPointcut() {
-        // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
     /**
@@ -47,7 +44,6 @@ public class LoggingAspect {
             " || within(com.violet.vcommerce.vcproducts.service..*)" +
             " || within(com.violet.vcommerce.vcproducts.web.rest..*)")
     public void applicationPackagePointcut() {
-        // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
     /**

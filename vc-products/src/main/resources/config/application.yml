@@ -4,3 +4,6 @@ spring:
 
 server:
   port: 8001
+
+application:
+  description: Rosario Central

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.violet.vcommerce.vcproducts.config.ApplicationProperties",
+      "sourceType": "com.violet.vcommerce.vcproducts.config.ApplicationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.description",
+      "type": "java.lang.String",
+      "sourceType": "com.violet.vcommerce.vcproducts.config.ApplicationProperties"
+    }
+  ],
+  "hints": []
+}

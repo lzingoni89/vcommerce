@@ -2,13 +2,8 @@ package com.violet.vcommerce.vcproducts.domain.abs;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -22,10 +17,10 @@ public abstract class DefaultBO extends AuditingEntity implements Serializable {
 
     @Id
     @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "public_id", nullable = false, updatable = false)
-    @JsonIgnore
     private String publicId;
 
     @PrePersist
