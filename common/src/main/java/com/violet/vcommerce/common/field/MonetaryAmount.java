@@ -1,6 +1,6 @@
-package com.violet.vcommerce.vcitems.field;
+package com.violet.vcommerce.common.field;
 
-import com.violet.vcommerce.vcitems.constant.enums.Currency;
+import com.violet.vcommerce.common.constant.enums.Currency;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
