@@ -6,4 +6,4 @@ server:
   port: 8001
 
 application:
-  description: Rosario Central
+  description: Rosario Central Products

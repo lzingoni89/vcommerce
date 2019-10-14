@@ -46,6 +46,7 @@ public class ProductMapper {
         }
 
         ProductDTO dto = new ProductDTO();
+        dto.setPublicId(entity.getPublicId());
         dto.setName(entity.getName());
         dto.setAmount(entity.getAmount());
         return dto;

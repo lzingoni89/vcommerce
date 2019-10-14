@@ -1,0 +1,9 @@
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:1', 'Avion', 0, 1027.75, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:2', 'Computadora', 1, 27, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:3', 'Silla', 0, 344, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:4', 'Televisor', 0, 77.75, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:5', 'Campera', 0, 443.89, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:6', 'Fafafa', 1, 2023.65, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:7', 'Vaso', 0, 22, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:8', 'Toallon', 0, 887, 'SuperUser');
+INSERT INTO pro_product (public_id, product_name, amount_cur, amount_amt, CREATED_BY) VALUES ('pro:9', 'Comida', 1, 777, 'SuperUser');

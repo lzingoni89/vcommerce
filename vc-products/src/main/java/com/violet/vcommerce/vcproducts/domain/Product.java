@@ -18,13 +18,13 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "pro_producto")
+@Table(name = "pro_product")
 public class Product extends DefaultBO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Size(max = 100)
-    @Column(name = "name", length = 100, nullable = false)
+    @Column(name = "product_name", length = 100, nullable = false)
     @NotBlank
     private String name;
 

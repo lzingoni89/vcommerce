@@ -5,3 +5,5 @@ spring:
 server:
   port: 8101
 
+application:
+  description: Rosario Central Products
