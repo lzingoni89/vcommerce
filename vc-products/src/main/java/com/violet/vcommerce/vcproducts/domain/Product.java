@@ -1,11 +1,8 @@
 package com.violet.vcommerce.vcproducts.domain;
 
-import com.violet.vcommerce.vcproducts.domain.abs.DefaultBO;
-import com.violet.vcommerce.vcproducts.field.MonetaryAmount;
-import lombok.Builder;
+import com.violet.vcommerce.common.domain.DefaultBO;
+import com.violet.vcommerce.common.field.MonetaryAmount;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

@@ -1,8 +1,8 @@
 package com.violet.vcommerce.vcproducts.web.rest;
 
+import com.violet.vcommerce.common.web.dto.ProductDTO;
+import com.violet.vcommerce.common.web.rest.ApiRestResource;
 import com.violet.vcommerce.vcproducts.service.IProductService;
-import com.violet.vcommerce.vcproducts.service.dto.ProductDTO;
-import com.violet.vcommerce.vcproducts.web.rest.abs.ApiRestResource;
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

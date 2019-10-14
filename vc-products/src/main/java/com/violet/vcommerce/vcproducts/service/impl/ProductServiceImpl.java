@@ -1,9 +1,9 @@
 package com.violet.vcommerce.vcproducts.service.impl;
 
+import com.violet.vcommerce.common.web.dto.ProductDTO;
 import com.violet.vcommerce.vcproducts.repository.ProductRepository;
 import com.violet.vcommerce.vcproducts.service.IProductService;
-import com.violet.vcommerce.vcproducts.service.dto.ProductDTO;
-import com.violet.vcommerce.vcproducts.service.dto.mapper.ProductMapper;
+import com.violet.vcommerce.vcproducts.service.mapper.ProductMapper;
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
