@@ -16,24 +16,25 @@ import java.util.List;
 @RequestMapping("/api")
 public class ItemResource extends ApiRestResource {
 
-    private final IItemService itemService;
+    private final IItemService itemServiceFeignImpl;
 
     private static final String PREFIX_NAME = "/item";
 
     // Construct
-    public ItemResource(IItemService itemService) {
-        this.itemService = itemService;
+    public ItemResource(IItemService itemServiceFeignImpl) {
+        this.itemServiceFeignImpl = itemServiceFeignImpl;
     }
 
     // Services
     @GetMapping(PREFIX_NAME)
     public List<ItemDTO> getAll() {
-        return itemService.findAll();
+        return itemServiceFeignImpl.findAll();
     }
 
+    //    @HystrixCommand(fallbackMethod = "handleError")
     @GetMapping(PREFIX_NAME + "/{publicId}")
     public ItemDTO getItem(@PathVariable String publicId) {
-        return itemService.findByPublicID(publicId);
+        return itemServiceFeignImpl.findByPublicID(publicId);
     }
 
 

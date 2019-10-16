@@ -3,7 +3,14 @@ spring:
     name: vc-products
 
 server:
-  port: 8001
+  port: ${PORT:0}
 
 application:
   description: Rosario Central Products
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8901/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

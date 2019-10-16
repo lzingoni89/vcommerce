@@ -3,7 +3,6 @@ package com.violet.vcommerce.vcitems.service.impl;
 import com.violet.vcommerce.common.web.dto.ItemDTO;
 import com.violet.vcommerce.common.web.dto.ProductDTO;
 import com.violet.vcommerce.vcitems.service.IItemService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,11 +11,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Service("itemServiceImpl")
 public class ItemServiceImpl implements IItemService {
 
-    @Autowired
-    private RestTemplate productAPI;
+    private final RestTemplate productAPI;
+
+    public ItemServiceImpl(RestTemplate productAPI) {
+        this.productAPI = productAPI;
+    }
 
     @Override
     public List<ItemDTO> findAll() {

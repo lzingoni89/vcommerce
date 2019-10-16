@@ -1,16 +1,12 @@
-package com.violet.vcommerce.vcitems;
+package com.violet.vcommerce.eurekaserver;
 
-import com.violet.vcommerce.vcitems.config.ApplicationProperties;
-import com.violet.vcommerce.vcitems.config.DefaultProfileUtil;
-import com.violet.vcommerce.vcitems.constant.VCItemsConstant;
+import com.violet.vcommerce.eurekaserver.config.DefaultProfileUtil;
+import com.violet.vcommerce.eurekaserver.constant.EurekaServerConstant;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
@@ -20,20 +16,17 @@ import java.util.Collection;
 
 @Log4j2
 @SpringBootApplication
-@EnableEurekaClient
-@EnableConfigurationProperties(ApplicationProperties.class)
-@EnableFeignClients
-@EnableCircuitBreaker
-public class VcItemsApplication implements InitializingBean {
+@EnableEurekaServer
+public class EurekaServerApplication implements InitializingBean {
 
     private final Environment env;
 
-    public VcItemsApplication(Environment env) {
+    public EurekaServerApplication(Environment env) {
         this.env = env;
     }
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(VcItemsApplication.class);
+        SpringApplication app = new SpringApplication(EurekaServerApplication.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
@@ -42,7 +35,7 @@ public class VcItemsApplication implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
-        if (activeProfiles.contains(VCItemsConstant.PROFILE_DEVELOPMENT) && activeProfiles.contains(VCItemsConstant.PROFILE_PRODUCTION)) {
+        if (activeProfiles.contains(EurekaServerConstant.PROFILE_DEVELOPMENT) && activeProfiles.contains(EurekaServerConstant.PROFILE_PRODUCTION)) {
             log.error("You have misconfigured your application! It should not run " +
                     "with both the 'dev' and 'prod' profiles at the same time.");
         }
