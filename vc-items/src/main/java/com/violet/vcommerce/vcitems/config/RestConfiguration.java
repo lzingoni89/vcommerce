@@ -13,7 +13,7 @@ public class RestConfiguration {
     @LoadBalanced
     public RestTemplate registrarProductAPI() {
         return new RestTemplateBuilder()
-                .rootUri("http://vc-products/api/product")
+                .rootUri("http://vc-products/api/product/")
                 .build();
     }
 

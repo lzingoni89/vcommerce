@@ -10,12 +10,12 @@ import java.util.List;
 @FeignClient(name = "vc-products")
 public interface ProductClientAPI {
 
-    String PREFIX_NAME = "/api/product";
+    String PREFIX_NAME = "/api/product/";
 
     @GetMapping(PREFIX_NAME)
     List<ProductDTO> getAll();
 
-    @GetMapping(PREFIX_NAME + "/{publicId}")
+    @GetMapping(PREFIX_NAME + "{publicId}")
     ProductDTO getProduct(@PathVariable String publicId);
 
 }

@@ -18,7 +18,7 @@ public class ItemResource extends ApiRestResource {
 
     private final IItemService itemServiceFeignImpl;
 
-    private static final String PREFIX_NAME = "/item";
+    private static final String PREFIX_NAME = "/item/";
 
     // Construct
     public ItemResource(IItemService itemServiceFeignImpl) {
@@ -32,7 +32,7 @@ public class ItemResource extends ApiRestResource {
     }
 
     //    @HystrixCommand(fallbackMethod = "handleError")
-    @GetMapping(PREFIX_NAME + "/{publicId}")
+    @GetMapping(PREFIX_NAME + "{publicId}")
     public ItemDTO getItem(@PathVariable String publicId) {
         return itemServiceFeignImpl.findByPublicID(publicId);
     }

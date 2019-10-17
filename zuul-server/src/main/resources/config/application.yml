@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul-server
+
+server:
+  port: 8911
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8901/eureka
+zuul:
+  routes:
+    productos:
+      serviceId: vc-products
+      path: /**/api/product/**
+    items:
+      serviceId: vc-items
+      path: /**/api/item/**

@@ -19,7 +19,7 @@ public class ProductResource extends ApiRestResource {
 
     private final IProductService productService;
 
-    private static final String PREFIX_NAME = "/product";
+    private static final String PREFIX_NAME = "/product/";
 
     // Construct
     public ProductResource(IProductService productService) {
@@ -32,7 +32,7 @@ public class ProductResource extends ApiRestResource {
         return productService.findAll();
     }
 
-    @GetMapping(PREFIX_NAME + "/{publicId}")
+    @GetMapping(PREFIX_NAME + "{publicId}")
     public ProductDTO getProduct(@PathVariable String publicId) {
         return productService.findByPublicId(publicId);
     }
