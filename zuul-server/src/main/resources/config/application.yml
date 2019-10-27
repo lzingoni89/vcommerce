@@ -17,3 +17,8 @@ zuul:
     items:
       serviceId: vc-items
       path: /**/api/item/**
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 10000
