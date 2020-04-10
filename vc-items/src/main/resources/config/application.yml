@@ -1,7 +1,3 @@
-spring:
-  application:
-    name: vc-items
-
 server:
   port: 8101
 

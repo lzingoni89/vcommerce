@@ -1,7 +1,6 @@
 package com.violet.vcommerce.vcitems;
 
 import com.violet.vcommerce.vcitems.config.ApplicationProperties;
-import com.violet.vcommerce.vcitems.config.DefaultProfileUtil;
 import com.violet.vcommerce.vcitems.constant.VCItemsConstant;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.InitializingBean;
@@ -27,20 +26,22 @@ import java.util.Collection;
 public class VcItemsApplication implements InitializingBean {
 
     private final Environment env;
+    private final ApplicationProperties applicationProperties;
 
-    public VcItemsApplication(Environment env) {
+    public VcItemsApplication(Environment env, ApplicationProperties applicationProperties) {
         this.env = env;
+        this.applicationProperties = applicationProperties;
     }
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(VcItemsApplication.class);
-        DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
+        log.info(applicationProperties.getDescription());
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
         if (activeProfiles.contains(VCItemsConstant.PROFILE_DEVELOPMENT) && activeProfiles.contains(VCItemsConstant.PROFILE_PRODUCTION)) {
             log.error("You have misconfigured your application! It should not run " +
